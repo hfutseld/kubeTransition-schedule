@@ -15,3 +15,84 @@
 [kubernetes的github地址](https://github.com/kubernetes/kubernetes)
 
 源码版本：1.4以后 
+
+kube-schedule的源码在/kubernetes/plugin下，以下是plugin目录下kube-schedule的代码结构（去掉了其他不相干的代码）
+
+	plugin
+	├── cmd
+	│   └── kube-scheduler
+	│       ├── OWNERS
+	│       ├── app
+	│       │   ├── options
+	│       │   │   └── options.go
+	│       │   └── server.go
+	│       └── scheduler.go
+	└── pkg
+    	└── scheduler
+   	 	    ├── algorithm
+    	    │   ├── doc.go
+    	    │   ├── listers.go
+    	    │   ├── predicates
+    	    │   │   ├── error.go
+   	 	    │   │   ├── predicates.go
+    	    │   │   └── predicates_test.go
+    	    │   ├── priorities
+    	    │   │   ├── interpod_affinity.go
+    	    │   │   ├── interpod_affinity_test.go
+	   	    │   │   ├── metadata.go
+    	    │   │   ├── node_affinity.go
+    	    │   │   ├── node_affinity_test.go
+    	    │   │   ├── priorities.go
+    	    │   │   ├── priorities_test.go
+    	    │   │   ├── selector_spreading.go
+    	    │   │   ├── selector_spreading_test.go
+    	    │   │   ├── taint_toleration.go
+    	    │   │   ├── taint_toleration_test.go
+    	    │   │   └── util
+    	    │   │       ├── non_zero.go
+    	    │   │       ├── topologies.go
+    	    │   │       └── util.go
+    	    │   ├── scheduler_interface.go
+    	    │   ├── scheduler_interface_test.go
+    	    │   └── types.go
+    	    ├── algorithmprovider
+    	    │   ├── defaults
+    	    │   │   ├── compatibility_test.go
+    	    │   │   └── defaults.go
+    	    │   ├── plugins.go
+    	    │   └── plugins_test.go
+    	    ├── api
+    	    │   ├── latest
+    	    │   │   └── latest.go
+    	    │   ├── register.go
+    	    │   ├── types.go
+    	    │   ├── v1
+    	    │   │   ├── register.go
+    	    │   │   └── types.go
+    	    │   └── validation
+    	    │       ├── validation.go
+    	    │       └── validation_test.go
+    	    ├── equivalence_cache.go
+    	    ├── extender.go
+    	    ├── extender_test.go
+    	    ├── factory
+    	    │   ├── factory.go
+    	    │   ├── factory_test.go
+    	    │   ├── plugins.go
+    	    │   └── plugins_test.go
+    	    ├── generic_scheduler.go
+    	    ├── generic_scheduler_test.go
+    	    ├── metrics
+    	    │   └── metrics.go
+    	    ├── scheduler.go
+    	    ├── scheduler_test.go
+    	    ├── schedulercache
+    	    │   ├── cache.go
+    	    │   ├── cache_test.go
+    	    │   ├── interface.go
+    	    │   ├── node_info.go
+    	    │   └── util.go
+    	    └── testing
+    	        ├── fake_cache.go
+    	        └── pods_to_cache.go
+  
