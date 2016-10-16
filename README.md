@@ -21,15 +21,14 @@ kube-schedule的源码在/kubernetes/plugin下，以下是plugin目录下kube-sc
 	plugin
 	├── cmd
 	│   └── kube-scheduler
-	│       ├── OWNERS
 	│       ├── app
 	│       │   ├── options
 	│       │   │   └── options.go
-	│       │   └── server.go
-	│       └── scheduler.go
+	│       │   └── server.go //SchedulerServer的数据结构定义
+	│       └── scheduler.go  //kube-scheduler的入口程序
 	└── pkg
     	└── scheduler
-   	 	    ├── algorithm
+   	 	    ├── algorithm //预选和优选策略算法
     	    │   ├── doc.go
     	    │   ├── listers.go
     	    │   ├── predicates
