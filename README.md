@@ -9,12 +9,13 @@
 
 * 在kubernetes中指定某些机器用于部署该pod
 * pod之间的互斥问题（亲和性）
+* pod独占机器部署（一台机器上只能部署一个pod）
 
 ## kubernetes中的schedule模块源码分析
 
 [kubernetes的github地址](https://github.com/kubernetes/kubernetes)
 
-源码版本：1.4以后 
+源码版本：1.3.10
 
 kube-schedule的源码在/kubernetes/plugin下，以下是plugin目录下kube-schedule的代码结构（去掉了其他不相干的代码）
 
